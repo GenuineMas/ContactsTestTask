@@ -18,7 +18,7 @@ struct ContactRow: View {
         
         HStack {
             
-            ImageViewWidget(imageUrl: contact.picture.large)
+            ImageViewWidget(imageUrl: contact.picture.medium)
               
                 .scaledToFit()
                 .frame(width: 50, height: 50, alignment: .leading)

@@ -39,10 +39,11 @@ struct ImageViewWidget: View {
     
     init(imageUrl: String) {
         imageLoader = ImageLoader(imageUrl: imageUrl)
+        print(imageLoader.data)
     }
     
     var body: some View {
-        Image(uiImage: (imageLoader.data.count == 0) ? UIImage(named: "Icon")! : UIImage(data: imageLoader.data)!)
+        Image(uiImage:  UIImage(data: imageLoader.data) ?? UIImage(named: "Icon")! )
             .resizable()
             .frame(width: 50, height: 50)
     }

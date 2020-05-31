@@ -38,6 +38,7 @@ class NetworkManager: ObservableObject {
                // print(self.contactBook)
             }
         }.resume()
+        
 
     }
     

@@ -11,7 +11,13 @@ import Combine
 import SwiftUI
 
 class NetworkManager: ObservableObject {
+     private let contactResults = "https://randomuser.me/api/?results=500"
+    private let urlToImage = "https://stevebloor.files.wordpress.com/2014/05/wpid-wp-1399192634866.jpeg"
     var didChange = PassthroughSubject<NetworkManager,Never>()
+  
+    init() {
+        loadData()
+    }
     
     @Published var contactBook = [Contact]() {
         didSet {
@@ -19,19 +25,21 @@ class NetworkManager: ObservableObject {
         }
     }
     
-    private let contactResults = "https://randomuser.me/api/?results=500"
-    
+
     func loadData() {
         
         guard let url = URL(string: contactResults) else { return }
         URLSession.shared.dataTask(with: url){ (data, _, _) in
             guard let data = data else { return }
             let contactsJSON = try! JSONDecoder().decode(Results.self, from: data)
-            
+
             DispatchQueue.main.async {
                 self.contactBook = contactsJSON.results
-                print(self.contactBook)
+               // print(self.contactBook)
             }
         }.resume()
+
     }
+    
+
 }

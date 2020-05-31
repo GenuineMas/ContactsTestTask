@@ -9,20 +9,25 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+    var contact: Contact?
      @ObservedObject private var networkManager = NetworkManager()
     
      var body: some View {
           NavigationView {
+            
             List (networkManager.contactBook) { contact in
+                
+          
              ContactRow(contact: contact)
-           }.onAppear(perform: networkManager.loadData).navigationBarTitle(Text("Emails"))
+            }.navigationBarTitle(Text("Contacts"))
          }
      }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView() 
     }
 }
+

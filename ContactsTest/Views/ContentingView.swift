@@ -19,15 +19,8 @@ struct ContentView: View {
             
             List (networkManager.contactBook) { contact in
                  NavigationLink(destination: ContactDetail(contact: contact)) {
-             HStack {
-                          
-                ImageView(withURL: contact.picture.medium)
-                              .scaledToFit()
-                              .frame(width: 50, height: 50, alignment: .leading)
- 
-                          Text(" \(contact.name.first) \(contact.name.last)")
-                      }
-                 }
+                    ContactRow(contact: contact)
+                }
             }.navigationBarTitle(Text("Contacts")).id(UUID())
           
          }

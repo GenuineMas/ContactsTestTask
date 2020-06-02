@@ -9,32 +9,37 @@
 import SwiftUI
 
 struct ContentView: View {
-    var contact: Contact?
+    //var contact: Contact?
      @ObservedObject private var networkManager = NetworkManager()
     
      var body: some View {
+        
+        
           NavigationView {
             
             List (networkManager.contactBook) { contact in
+                 NavigationLink(destination: ContactDetail(contact: contact)) {
              HStack {
                           
-                          ImageViewWidget(imageUrl: contact.picture.medium)
-                            
+                ImageView(withURL: contact.picture.medium)
                               .scaledToFit()
                               .frame(width: 50, height: 50, alignment: .leading)
-                              
-                          
+ 
                           Text(" \(contact.name.first) \(contact.name.last)")
                       }
-            }.navigationBarTitle(Text("Contacts"))
+                 }
+            }.navigationBarTitle(Text("Contacts")).id(UUID())
+          
          }
      }
 }
 
 
+
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView() 
+        ContentView()
     }
 }
 

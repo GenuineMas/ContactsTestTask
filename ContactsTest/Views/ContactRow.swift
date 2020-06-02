@@ -1,42 +1,31 @@
+//////
+//////  ContactRow.swift
+//////  ContactsTest
+//////
+//////  Created by Genuine on 28.05.2020.
+//////  Copyright © 2020 Genuine. All rights reserved.
+//////
+////
+////
+//import SwiftUI
 //
-//  ContactRow.swift
-//  ContactsTest
+//struct ContactRow: View {
+//    var contact: Contact
+//   
+// @ObservedObject private var networkManager = NetworkManager()
+//  // static var defaultImage = UIImage(named: "Icon.png")
 //
-//  Created by Genuine on 28.05.2020.
-//  Copyright © 2020 Genuine. All rights reserved.
+//    var body: some View {
+//        
+//        HStack {
 //
-
-
-import SwiftUI
-
-struct ContactRow: View {
-    var contact: Contact
-  // @ObservedObject private var networkManager = NetworkManager()
-  // static var defaultImage = UIImage(named: "Icon.png")
-
-    var body: some View {
-        
-        HStack {
-            
-            ImageViewWidget(imageUrl: contact.picture.medium)
-              
-                .scaledToFit()
-                .frame(width: 50, height: 50, alignment: .leading)
-                
-            
-            Text("\(contact.name.title) \(contact.name.first) \(contact.name.last)")
-        }
-    }
-    
-}
-
-//struct URLImage:View {
-//     @ObservedObject private var imageLoad = ImageLoad(contactPictureURL: String())
-//    
+//           // ImageView(imageUrl: contact.picture.medium)
+//              
+//               // .scaledToFit()
+//               // .frame(width: 50, height: 50, alignment: .leading)
+//                
+//            
+//            Text("\(contact.name.title) \(contact.name.first) \(contact.name.last)")
+//        }
+//    }
 //}
-
-
-
-
-
-

@@ -8,19 +8,21 @@
 
 import SwiftUI
 
-struct LandmarkDetail: View {
+struct ContactDetail: View {
+    
+var contact: Contact?
     var body: some View {
         VStack {
 
-            CircleImage()
+            CircleImage(contact: contact!)
                 .offset(x: 0, y: 130)
-                .padding(.bottom, 130)
+                .padding(.bottom, 200)
 
             VStack(alignment: .leading) {
-                Text("Turtle Rock")
+                Text("\(contact?.name.last ?? "Tom Lee")")
                     .font(.title)
                 HStack(alignment: .top) {
-                    Text("Joshua Tree National Park")
+                    Text("\(contact?.email ?? "Tom Lee")")
                         .font(.subheadline)
                     Spacer()
                     Text("California")
@@ -32,19 +34,28 @@ struct LandmarkDetail: View {
             Spacer()
         }
     }
-    struct CircleImage: View {
-        var body: some View {
-            Image("turtlerock")
-                .clipShape(Circle())
-                .overlay(
-                    Circle().stroke(Color.white, lineWidth: 4))
-                .shadow(radius: 10)
-        }
+
+}
+struct CircleImage: View {
+   var contact: Contact?
+    init(contact:Contact) {
+        self.contact = contact
+        
+    }
+    private let urlToImage = "https://stevebloor.files.wordpress.com/2014/05/wpid-wp-1399192634866.jpeg"
+    var body: some View {
+       ImageView(withURL: contact?.picture.large ?? urlToImage)
+            .clipShape(Circle())
+            .frame(width: 300, height: 300)
+            .overlay(
+                Circle().stroke(Color.white, lineWidth: 4))
+            .shadow(radius: 10)
+        
     }
 }
 
-struct LandmarkDetail_Previews: PreviewProvider {
+struct ContactDetail_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkDetail()
+        ContactDetail()
     }
 }

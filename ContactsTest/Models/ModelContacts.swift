@@ -21,10 +21,10 @@ struct Contact : Codable,Identifiable {
         let large : String
         let medium : String
         let thumbnail : String
-            
+    
     }
    
-    var id = UUID()
+    var id = UUID()   //Using JSON with Custom Types
     let email: String
     let picture: Picture
     let name : Name

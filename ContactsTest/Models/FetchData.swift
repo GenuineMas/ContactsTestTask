@@ -21,8 +21,7 @@ class NetworkManager: ObservableObject {
         
     }
     
-    @Published var contactBook = [Contact]()
-        {
+    @Published var contactBook = [Contact](){
         didSet {
             didChange.send(self)
         }

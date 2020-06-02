@@ -30,14 +30,10 @@ struct Contact : Codable,Identifiable {
     let name : Name
     //    let status: Bool
     enum CodingKeys: String,CodingKey {
-        
         case name = "name"
         case email = "email"
         case picture = "picture"
-        
-        
     }
-    
 }
 
 struct Results : Codable {

@@ -10,14 +10,14 @@ import SwiftUI
 
 struct ContactDetail: View {
     
-var contact: Contact?
+    var contact: Contact?
     var body: some View {
         VStack {
 
             CircleImage(contact: contact!)
                 .offset(x: 0, y: 130)
                 .padding(.bottom, 200)
-
+            
             VStack(alignment: .leading) {
                 Text("\(contact?.name.last ?? "Tom Lee")")
                     .font(.title)
@@ -30,21 +30,21 @@ var contact: Contact?
                 }
             }
             .padding()
-
+            
             Spacer()
         }
     }
-
 }
+
 struct CircleImage: View {
-   var contact: Contact?
+    var contact: Contact?
     init(contact:Contact) {
         self.contact = contact
         
     }
     private let urlToImage = "https://stevebloor.files.wordpress.com/2014/05/wpid-wp-1399192634866.jpeg"
     var body: some View {
-       ImageView(withURL: contact?.picture.large ?? urlToImage)
+        ImageView(withURL: contact?.picture.large ?? urlToImage)
             .clipShape(Circle())
             .frame(width: 300, height: 300)
             .overlay(

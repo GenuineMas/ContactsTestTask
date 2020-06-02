@@ -11,21 +11,16 @@ import SwiftUI
 
 struct ContactRow: View {
     var contact: Contact
-   
-// @ObservedObject private var networkManager = NetworkManager()
-  // static var defaultImage = UIImage(named: "Icon.png")
-
-    var body: some View {
+   var body: some View {
         
         HStack {
-
             ImageView(withURL: contact.picture.medium)
               
                 .scaledToFit()
                 .frame(width: 50, height: 50, alignment: .leading)
                 
             
-            Text("\(contact.name.title) \(contact.name.first) \(contact.name.last)")
+            Text(" \(contact.name.first) \(contact.name.last)")
         }
     }
 }

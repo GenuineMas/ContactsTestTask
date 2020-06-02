@@ -10,48 +10,8 @@ import Foundation
 import Combine
 import SwiftUI
 
-//class ImageLoader: ObservableObject {
-//
-//
-//    var didChange = PassthroughSubject<Data, Never>()
-//  //  var contact:Contact
-//    var data = Data() {
-//        didSet {
-//            didChange.send(data)
-//        }
-//    }
-//
-//   init(imageUrl: String) {
-//        // fetch image data and then call didChange
-//        guard let url = URL(string: imageUrl) else { return }
-//        URLSession.shared.dataTask(with: url) { (data, _, _) in
-//            guard let data = data else { return }
-//
-//            DispatchQueue.main.async {
-//                self.data = data
-//            }
-//
-//        }.resume()
-//    }
-//}
-//
-//struct ImageViewWidget: View {
-//
-//    @ObservedObject var imageLoader: ImageLoader
-//
-//    init(imageUrl: String) {
-//        self.imageLoader = ImageLoader(imageUrl: imageUrl)
-//        print(imageLoader.data)
-//    }
-//
-//    var body: some View {
-//        Image(uiImage:  UIImage(data: imageLoader.data) ?? UIImage(named: "Icon")! )
-//            .resizable()
-//
-//          //  .frame(width: 50, height: 50)
-//    }
-//}
 class ImageLoader: ObservableObject {
+    
     @Published var image: UIImage?
     var urlString: String?
     var imageCache = ImageCache.getImageCache()

@@ -31,14 +31,14 @@ struct ContentView: View {
                 List (networkManager.contactBook) { contact in
 
                     NavigationLink(destination: ContactDetail(contact: contact)) {
-
-
+                        
                         ContactRow(contact: contact)
 
                     }
                 }.navigationBarTitle(Text("Contacts")).id(UUID())
                 }
                 else {
+                    
                     ContactGridView(networkManager: networkManager)
                 }
           

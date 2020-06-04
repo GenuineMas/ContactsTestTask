@@ -178,9 +178,9 @@
 		8CB6D4DE2484095B000A832C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8C352FCE247E70C600A2394B /* ContentView.swift */,
 				8C3BC1852487DCA4001A004A /* ContactGridView.swift */,
 				8C352FFA247E8DF200A2394B /* ContactDetailView.swift */,
-				8C352FCE247E70C600A2394B /* ContentView.swift */,
 				8CBF06B82480431600128F0A /* ContactRow.swift */,
 			);
 			path = Views;

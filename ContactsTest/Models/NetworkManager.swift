@@ -37,7 +37,7 @@ class NetworkManager: ObservableObject {
             
             DispatchQueue.main.async {
                 self.contactBook = contactsJSON.results
-               // print(self.contactBook)
+                print(self.contactBook)
             }
         }.resume()
         

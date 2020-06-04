@@ -10,32 +10,45 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selectorIndex = 0
-      @State private var numbers = ["List","Grid"]
+    @State private var numbers = ["List","Grid"]
     
-     @ObservedObject private var networkManager = NetworkManager()
-     var body: some View {
-
-          NavigationView {
+   @ObservedObject private var networkManager = NetworkManager()
+    var body: some View {
+        
+        NavigationView {
             VStack{
+                
                 Picker("Numbers", selection: self.$selectorIndex) {
-                                      ForEach(0 ..< self.numbers.count) { index in
-                                                     Text(self.numbers[index]).tag(index)
-                                                 }
-                                             }
-                                             .pickerStyle(SegmentedPickerStyle())
-
-            List (networkManager.contactBook) { contact in
-       
-                 NavigationLink(destination: ContactDetail(contact: contact)) {
-                  
-                    ContactRow(contact: contact)
+                    ForEach(0 ..< self.numbers.count) { index in
+                        Text(self.numbers[index]).tag(index)
+                    }
                 }
-            }.navigationBarTitle(Text("Contacts")).id(UUID())
+                .pickerStyle(SegmentedPickerStyle())
+              //  ContactGridView()
+
+                
+                if selectorIndex == 0 {
+                List (networkManager.contactBook) { contact in
+
+                    NavigationLink(destination: ContactDetail(contact: contact)) {
+
+
+                        ContactRow(contact: contact)
+
+                    }
+                }.navigationBarTitle(Text("Contacts")).id(UUID())
+                }
+                else {
+                    ContactGridView(networkManager: networkManager)
+                }
           
-         }
-     }
-}
-}
+                
+                }
+                
+            }
+        }
+    }
+
 
 
 

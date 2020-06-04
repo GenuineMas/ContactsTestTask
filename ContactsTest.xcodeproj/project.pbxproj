@@ -18,8 +18,9 @@
 		8C352FED247E70CA00A2394B /* ContactsTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C352FEC247E70CA00A2394B /* ContactsTestUITests.swift */; };
 		8C352FFB247E8DF200A2394B /* ContactDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C352FFA247E8DF200A2394B /* ContactDetailView.swift */; };
 		8C353001247EABD400A2394B /* ModelContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C353000247EABD400A2394B /* ModelContacts.swift */; };
+		8C3BC1862487DCA4001A004A /* ContactGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3BC1852487DCA4001A004A /* ContactGridView.swift */; };
 		8CB6D4E0248420E3000A832C /* ImageFetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB6D4DF248420E3000A832C /* ImageFetching.swift */; };
-		8CB6D4E22484554C000A832C /* FetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C352FFC247E94A200A2394B /* FetchData.swift */; };
+		8CB6D4E22484554C000A832C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C352FFC247E94A200A2394B /* NetworkManager.swift */; };
 		8CBF06B92480431600128F0A /* ContactRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBF06B82480431600128F0A /* ContactRow.swift */; };
 		8CCEBF502482D88400DB2360 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CCEBF4F2482D88400DB2360 /* Icon.png */; };
 /* End PBXBuildFile section */
@@ -58,9 +59,10 @@
 		8C352FEC247E70CA00A2394B /* ContactsTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTestUITests.swift; sourceTree = "<group>"; };
 		8C352FEE247E70CA00A2394B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C352FFA247E8DF200A2394B /* ContactDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailView.swift; sourceTree = "<group>"; };
-		8C352FFC247E94A200A2394B /* FetchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchData.swift; sourceTree = "<group>"; };
+		8C352FFC247E94A200A2394B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		8C352FFF247EA7B100A2394B /* contactData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = contactData.json; sourceTree = "<group>"; };
 		8C353000247EABD400A2394B /* ModelContacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelContacts.swift; sourceTree = "<group>"; };
+		8C3BC1852487DCA4001A004A /* ContactGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactGridView.swift; sourceTree = "<group>"; };
 		8CB6D4DF248420E3000A832C /* ImageFetching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetching.swift; sourceTree = "<group>"; };
 		8CBF06B82480431600128F0A /* ContactRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRow.swift; sourceTree = "<group>"; };
 		8CCEBF4F2482D88400DB2360 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
@@ -167,7 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				8C353000247EABD400A2394B /* ModelContacts.swift */,
-				8C352FFC247E94A200A2394B /* FetchData.swift */,
+				8C352FFC247E94A200A2394B /* NetworkManager.swift */,
 				8CB6D4DF248420E3000A832C /* ImageFetching.swift */,
 			);
 			path = Models;
@@ -176,6 +178,7 @@
 		8CB6D4DE2484095B000A832C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8C3BC1852487DCA4001A004A /* ContactGridView.swift */,
 				8C352FFA247E8DF200A2394B /* ContactDetailView.swift */,
 				8C352FCE247E70C600A2394B /* ContentView.swift */,
 				8CBF06B82480431600128F0A /* ContactRow.swift */,
@@ -319,10 +322,11 @@
 				8C352FCD247E70C600A2394B /* ContactsTest.xcdatamodeld in Sources */,
 				8C352FCF247E70C600A2394B /* ContentView.swift in Sources */,
 				8C352FCA247E70C600A2394B /* SceneDelegate.swift in Sources */,
+				8C3BC1862487DCA4001A004A /* ContactGridView.swift in Sources */,
 				8C353001247EABD400A2394B /* ModelContacts.swift in Sources */,
 				8C352FFB247E8DF200A2394B /* ContactDetailView.swift in Sources */,
 				8CB6D4E0248420E3000A832C /* ImageFetching.swift in Sources */,
-				8CB6D4E22484554C000A832C /* FetchData.swift in Sources */,
+				8CB6D4E22484554C000A832C /* NetworkManager.swift in Sources */,
 				8CBF06B92480431600128F0A /* ContactRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

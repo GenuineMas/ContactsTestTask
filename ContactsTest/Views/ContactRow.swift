@@ -14,7 +14,7 @@ struct ContactRow: View {
    var body: some View {
         
         HStack {
-            ImageView(withURL: contact.picture.medium)
+            ImageView(withURL: contact.picture.thumbnail)
               
                 .scaledToFit()
                 .frame(width: 50, height: 50, alignment: .leading)
@@ -23,4 +23,16 @@ struct ContactRow: View {
             Text(" \(contact.name.first) \(contact.name.last)")
         }
     }
+}
+
+struct ContactCell : View {
+    var contact: Contact
+     var body: some View {
+          
+          HStack {
+              ImageView(withURL: contact.picture.thumbnail)
+                  .scaledToFit()
+                  .frame(width: 50, height: 50, alignment: .leading)
+          }
+      }
 }
